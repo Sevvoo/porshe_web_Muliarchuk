@@ -1,0 +1,46 @@
+.car-type-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.car-type{
+    position: relative;
+    width: 33.33%;
+}
+
+.car-type-img{
+    width: 100%;
+}
+
+.car-type-info{
+    position: absolute;
+    color: white;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6587009803921569) 30%, rgba(255,255,255,0) 100%);
+}
+
+.car-type-info-title{
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.car-type-info-text{
+    font-size: 30px;
+    font-size: 20px;
+}
+
+.car-type-btn{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.car-type-btn:hover{
+    background-color: rgb(184, 10, 10);
+}

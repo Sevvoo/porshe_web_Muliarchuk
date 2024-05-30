@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="card.css">
+    <link rel="stylesheet" type="text/css" href="presentation-block.css">
+    <link rel="stylesheet" type="text/css" href="car-type.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./scripts/splide-4.1.3/dist/css/splide.min.css">
+    <title>Porshe Origin</title>
+    <link rel="shortcut icon" href="assets/prosh.png" type="image/x-icon">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .profile {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .profile-details {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-details.active {
+            display: block;
+        }
+        .profile-details img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        .logout {
+            margin-top: 10px;
+            text-align: center;
+            cursor: pointer;
+            color: #007bff;
+        }
+        .logout:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="assets/prosh.png" alt="logo" class="logo">
+        <h1 class="logo-title">PORSHE</h1>
+        <ul class="header-menu">
+            <li class="header-menu-btn register" id="openModal">Реєстрація</li>
+        </ul>
+        <a href="kalendar.html">Записатся на тест драйв</a>
+        <div class="profile" id="profile">
+            <img src="default-avatar.png" alt="Avatar" id="profileAvatar">
+            <div class="change-profile">Змінити профіль</div>
+        </div>
+    </header>
+    <main>
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><img class="image1" src="./assets/sliders/Image1.png" alt="slide"></li>
+                    <li class="splide__slide"><img class="image1" src="./assets/sliders/Image2.png" alt="slide"></li>
+                    <li class="splide__slide"><img class="image1" src="./assets/sliders/Image3.png" alt="slide"></li>
+                    <li class="splide__slide"><img class="image1" src="./assets/sliders/image4.webp" alt="slide"></li>
+                    <li class="splide__slide"><img class="image1" src="./assets/sliders/image5.webp" alt="slide"></li>
+                    <li class="splide__slide"><img class="image1" src="./assets/sliders/image6.webp" alt="slide"></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="presentation-block">
+            <h2 class="presentation-title">Модельний ряд</h2>
+            <div class="car-type-list">
+                <div class="car-type">
+                    <img class="car-type-img" src="assets/911.jpg" alt="">
+                    <div class="car-type-info">
+                        <h3 class="car-type-info-title">911</h3>
+                        <p class="car-type-info-">орієнтовна вартість від ₴ 4 868 985</p>
+                    </div>
+                    <button class="car-type-btn" data-model="911">> Всі моделі</button>
+                </div>
+
+                <div class="car-type">
+                    <img class="car-type-img" src="assets/panamera.jpg" alt="">
+                    <div class="car-type-info">
+                        <h3 class="car-type-info-title">Panamera</h3>
+                        <p class="car-type-info-">орієнтовна вартість від ₴ 4 868 985</p>
+                    </div>
+                    <button class="car-type-btn" data-model="Panamera">> Всі моделі</button>
+                </div>
+
+                <div class="car-type">
+                    <img class="car-type-img" src="assets/tycan.jpg" alt="">
+                    <div class="car-type-info">
+                        <h3 class="car-type-info-title">Tycan</h3>
+                        <p class="car-type-info-">орієнтовна вартість від ₴ 4 868 985</p>
+                    </div>
+                    <button class="car-type-btn" data-model="Tycan">> Всі моделі</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="registrationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Реєстрація</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="firstName">Ім'я</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Прізвище</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middleName">По батькові</label>
+                        <input type="text" id="middleName" name="middleName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">СТАТЬ</label>
+                        <select id="gender" name="gender" class="form-control" required>
+                            <option value="male">Чоловік</option>
+                            <option value="female">Жінка</option>
+                            <option value="other">Інше</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">ВІК</label>
+                        <input type="number" id="age" name="age" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">НОМЕР ТЕЛЕФОНА</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" pattern="^\+380\d{9}$" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Країна</label>
+                        <select id="country" name="country" class="form-control" required>
+                            <option value="Ukraine">Україна</option>
+                            <option value="Poland">Польща</option>
+                            <option value="Germany">Німеччина</option>
+                            <option value="Other">Інше</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="captcha">Введіть капчу: <span id="captchaText"></span></label>
+                        <input type="text" id="captcha" name="captcha" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Зареєструватися</button>
+                </form>
+            </div>
+        </div>
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeProfile">&times;</span>
+                <h2>Профіль</h2>
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="profileFirstName">Ім'я</label>
+                        <input type="text" id="profileFirstName" name="profileFirstName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileLastName">Прізвище</label>
+                        <input type="text" id="profileLastName" name="profileLastName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileMiddleName">По батькові</label>
+                        <input type="text" id="profileMiddleName" name="profileMiddleName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="profileGender">СТАТЬ</label>
+                        <select id="profileGender" name="profileGender" class="form-control" required>
+                            <option value="male">Чоловік</option>
+                            <option value="female">Жінка</option>
+                            <option value="other">Інше</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileEmail">електронна пошта</label>
+                        <input type="email" id="profileEmail" name="profileEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileAvatarInput">Аватар</label>
+                        <input type="file" id="profileAvatarInput" name="profileAvatarInput" class="form-control">
+                        <img id="profileAvatarPreview" src="default-avatar.png" alt="Avatar" class="profile-img">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Оновити профіль</button>
+                    <div class="logout" id="logout">Вийти з аккаунта</div>
+                </form>
+            </div>
+        </div>
+
+        <div id="rentalModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeRental">&times;</span>
+                <h2>Реєстрація на аренду авто</h2>
+                <form id="rentalForm">
+                    <div class="form-group">
+                        <label for="rentalDate">Дата аренди</label>
+                        <input type="date" id="rentalDate" name="rentalDate" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Забронювати</button>
+                </form>
+            </div>
+        </div>
+
+        <a href="All cars Pages/911/911 Carrera 4.html"></a>
+
+        <div class="root"></div>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <span>Номер телефону: +380123456789</span>
+            <span>Електронна пошта: info@porsche.com</span>
+            <a href="https://meet.google.com/">Google Meet</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./scripts/splide-4.1.3/dist/js/splide.min.js"></script>
+    <script src="main.js"></script>
+    <script src="assets/constant/const.js"></script>
+    <script src="card.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+
+        function generateCaptcha() {
+            const captchaText = Math.random().toString(36).substring(2, 8);
+            document.getElementById('captchaText').innerText = captchaText;
+            return captchaText;
+        }
+
+        function saveProfileToLocalStorage(profile) {
+            localStorage.setItem('userProfile', JSON.stringify(profile));
+        }
+
+        function getProfileFromLocalStorage() {
+            return JSON.parse(localStorage.getItem('userProfile'));
+        }
+
+        function loadProfile() {
+            var profile = getProfileFromLocalStorage();
+            if (profile) {
+                document.getElementById('profileAvatar').src = profile.avatar || 'default-avatar.png';
+                document.getElementById('profileFirstName').value = profile.firstName || '';
+                document.getElementById('profileLastName').value = profile.lastName || '';
+                document.getElementById('profileMiddleName').value = profile.middleName || '';
+                document.getElementById('profileGender').value = profile.gender || 'male';
+                document.getElementById('profileEmail').value = profile.email || '';
+                document.getElementById('profileAvatarPreview').src = profile.avatar || 'default-avatar.png';
+            }
+        }
+
+        function clearProfile() {
+            localStorage.removeItem('userProfile');
+            document.getElementById('profileAvatar').src = 'default-avatar.png';
+        }
+
+        var modal = document.getElementById("registrationModal");
+        var btn = document.getElementById("openModal");
+        var span = document.getElementsByClassName("close")[0];
+        var captchaValue = generateCaptcha();
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var captchaInput = document.getElementById('captcha').value;
+            if (captchaInput !== captchaValue) {
+                alert('Неправильна капча.');
+                return;
+            }
+
+            var profileData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                middleName: document.getElementById('middleName').value,
+                gender: document.getElementById('gender').value,
+                age: document.getElementById('age').value,
+                phone: document.getElementById('phone').value,
+                country: document.getElementById('country').value,
+                avatar: 'default-avatar.png'
+            };
+
+            saveProfileToLocalStorage(profileData);
+            loadProfile();
+
+            alert('Реєстрація пройшла успішно!');
+            modal.style.display = "none";
+        });
+
+        var profile = document.getElementById('profile');
+        var profileModal = document.getElementById('profileModal');
+        var closeProfile = document.getElementById('closeProfile');
+
+        profile.onclick = function() {
+            profileModal.style.display = "block";
+            loadProfile();
+        }
+
+        closeProfile.onclick = function() {
+            profileModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == profileModal) {
+                profileModal.style.display = "none";
+            }
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var profileData = {
+                firstName: document.getElementById('profileFirstName').value,
+                lastName: document.getElementById('profileLastName').value,
+                middleName: document.getElementById('profileMiddleName').value,
+                gender: document.getElementById('profileGender').value,
+                email: document.getElementById('profileEmail').value,
+                avatar: document.getElementById('profileAvatar').src
+            };
+
+            saveProfileToLocalStorage(profileData);
+            loadProfile();
+
+            alert('Профіль оновлено успішно!');
+            profileModal.style.display = "none";
+        });
+
+        document.getElementById('profileAvatarInput').addEventListener('change', function(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('profileAvatarPreview').src = reader.result;
+                document.getElementById('profileAvatar').src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        });
+
+        document.getElementById('logout').addEventListener('click', function() {
+            clearProfile();
+            alert('Ви вийшли з аккаунта.');
+            profileModal.style.display = "none";
+        });
+
+        var rentalModal = document.getElementById("rentalModal");
+        var closeRental = document.getElementById("closeRental");
+
+        document.getElementById("openRental").onclick = function() {
+            rentalModal.style.display = "block";
+        }
+
+        closeRental.onclick = function() {
+            rentalModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == rentalModal) {
+                rentalModal.style.display = "none";
+            }
+        }
+
+        document.getElementById('rentalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Бронювання успішне!');
+            rentalModal.style.display = "none";
+        });
+
+        window.onload = function() {
+            loadProfile();
+        }
+    </script>
+</body>
+</html>

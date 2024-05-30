@@ -1,0 +1,46 @@
+.card{
+    width: 350px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-img{
+    width: 350px;
+}
+
+.card-title{
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.card-model{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.card-btn-set{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-btn{
+    width: 49%;
+    padding: 10px;
+    background-color: white;
+    border: solid 1px rgb(200, 200, 200);
+}
+
+.card-link{
+    color: black;
+    text-decoration: none;
+    width: 49%;
+    padding: 10px;
+    background-color: white;
+    border: solid 1px rgb(200, 200, 200);
+}

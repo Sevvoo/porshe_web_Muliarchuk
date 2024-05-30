@@ -1,0 +1,263 @@
+* {	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+/* .header{
+
+} */
+
+.logo{
+	display: block;
+	margin: 0 auto;
+	width: 45px;
+}
+
+.logo-title {
+	width: 150px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 20px;
+	font-family: sans-serif;
+	position: relative;
+}
+
+.logo-title::before {
+	content: ' ';
+	width: 800px;
+	height: 1px;
+	background-color: rgb(141, 138, 138);
+	position: absolute;
+	left: -800px;
+	top: 10px;
+}	
+
+.logo-title::after{
+	content: ' ';
+	width: 800px;
+	height: 1px;
+	background-color: rgb(141, 138, 138);
+	position: absolute;
+	left: 150px;
+	top: 10px;
+}
+
+.header-menu{
+	height: 30px;
+	list-style: none;
+	display: flex;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.test-drive{
+	margin-left: 30px;
+}
+
+.about{
+	margin-left: 30px;
+}
+
+.models-menu-but:hover{
+	color: red;
+}
+
+.models-menu-wrapper{
+	width: 400px;
+	display: block;
+	position: absolute;
+	z-index: 100;
+	top:98px;
+	left: 50px;
+	background-color: white;
+}
+
+.none-border::after{
+	content: "";
+}
+
+.models-menu-item:hover{
+	background-color: red;
+	color: white;
+}
+
+.models-menu-item{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding: 0px 30px;
+}
+
+.models-menu-item::after{
+	content: " ";
+	width: 340px;
+	top: 90px;
+	height: 1px;
+	background-color: rgb(194, 194, 194);
+	position: absolute;
+}
+
+.models-menu-text{
+	font-size: 20px;
+}
+
+.models-menu-img{
+	width: 100px;	
+}
+
+.hidden{
+	display: none;
+}
+
+.image1{
+	width: 100%;
+}
+
+.model{
+	display: flex;
+}
+
+.model-text{
+	font-size: 50px;
+	margin-left: 40%;
+	margin-top: 70px;
+}
+
+.model-img{
+	width: 629px;
+}
+
+.model-text-cars{
+	color: white;
+	z-index: 100;
+	font-size: 55px;
+	margin-top: -380px;
+	margin-left: 40px;
+}
+
+.model-value{
+	color: white;
+	margin-left: 40px;
+	font-size: 25px;
+}
+
+.model-first-string{
+	display: flex;
+}
+.model-second-string{
+	display: flex;
+	margin-top: 472px;
+}
+
+.model-button{
+	font-size: 20px;
+	z-index: 100;
+	width: 145px;
+	height: 45px;
+	color: white;
+	border:1px solid white;
+	cursor: pointer;
+	margin-top:100px;
+	margin-left: 50px;
+}
+
+.model-text-models{
+	margin-top: 3px
+}
+
+.model-button:hover{
+	border:1px solid #d5001c;
+	color: #d5001c;
+}
+
+.models-911-text{
+	font-size: 30px;
+	margin-left: 100px;
+}
+
+.root{
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: 0 auto;
+	justify-content: space-between;
+	border: none;
+}
+
+.registration{
+	margin-left: 100px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.logo-title {
+    font-size: 2em;
+    color: #333;
+}
+
+.booking-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
